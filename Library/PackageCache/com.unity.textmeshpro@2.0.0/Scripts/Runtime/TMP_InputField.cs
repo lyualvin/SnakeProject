@@ -1310,7 +1310,9 @@ namespace TMPro
 
         void UpdateStringPositionFromKeyboard()
         {
-            // TODO: Might want to add null check here.
+            if(m_SoftKeyboard == null || m_SoftKeyboard.selection == null)
+                return;
+            
             var selectionRange = m_SoftKeyboard.selection;
 
             if (selectionRange.start == 0 && selectionRange.length == 0)
